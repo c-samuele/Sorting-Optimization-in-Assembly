@@ -4,7 +4,9 @@ void Insert_sort(int arr[],int n);
 
 
 int main(){
-    int i,n;
+    int i,
+        n;
+
     int a[] = {16,4,15,5,1,6,2,10,9,11,12,13,8,3,7,14};
 
     n = sizeof(a)/sizeof(int);
