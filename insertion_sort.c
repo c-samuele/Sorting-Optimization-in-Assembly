@@ -38,7 +38,7 @@ void insertion_sort(int arr[],  /* Input: Array da ordinare */
         tmp = arr[i]; /* Memorizzo l'elemento corrente */
         
         for(j = i - 1;                  /* Riferimento all'elemento precedente */
-            j >= 0 && arr[j] > tmp;     /* Se il valore precedente è maggiore del valore successivo && l'array non è finito */
+            j >= 0 && tmp < arr[j];     /* Se il valore precedente è maggiore del valore successivo && l'array non è finito */
             j--){                       /* Decremento per il contatore per il confronto successivo */
             arr[j + 1] = arr[j];        /* Sposto l'elemento precedente nella posizione successiva */
         }
