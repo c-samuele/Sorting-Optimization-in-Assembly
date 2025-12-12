@@ -29,8 +29,7 @@ int main(){
 
 
 void Insert_sort(int arr[],  /* Input: Array da ordinare */
-                int n       /* Input: Numero di elementi */
-                ){
+                int n){      /* Input: Numero di elementi */
 
     int tmp, /* Lavoro: valore temporaneo */
         i,   /* Lavoro: indice i dell'array */
