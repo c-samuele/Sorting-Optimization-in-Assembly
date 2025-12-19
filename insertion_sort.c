@@ -2,16 +2,15 @@
 
 void insertion_sort(int arr[],int n);
 
-
 int main(){
     int i,n;
-    int a[] = {16,4,15,5,1,6,2,10};
+    int a[] = {2,4,6,5,0,7,1,3};
 
     n = sizeof(a)/sizeof(int);
 
-    printf("### Insert Sort ###\n");
+    printf("### Insertion Sort ###\n");
 
-    printf("Array Originale: \n");
+    printf("Array di origine: \n");
 
     for(i=0;i<n;i++)
         printf("%d\t",a[i]);
@@ -23,27 +22,23 @@ int main(){
     for(i=0;i<n;i++)
         printf("%d\t",a[i]);
 
+    return 0;
 }
 
 
 void insertion_sort(int arr[],  /* Input: Array da ordinare */
-                int n       /* Input: Numero di elementi */
-                ){
-
+                    int n){     /* Input: Numero di elementi */
+                
     int tmp, /* Lavoro: valore temporaneo */
         i,   /* Lavoro: indice i dell'array */
         j;   /* Lavoro: indice j dell'array */
 
     for(i = 1; i < n; i++){
-        tmp = arr[i]; /* Memorizzo l'elemento corrente */
+        tmp = arr[i]; /* Memorizzo l'elemento da ordinare */
         
-        for(j = i - 1;                  /* Riferimento all'elemento precedente */
-            j >= 0 && tmp < arr[j];     /* Se il valore precedente è maggiore del valore successivo && l'array non è finito */
-            j--){                       /* Decremento per il contatore per il confronto successivo */
-            arr[j + 1] = arr[j];        /* Sposto l'elemento precedente nella posizione successiva */
+        for(j = i - 1; j >= 0 && tmp < arr[j]; j--){                       
+            arr[j + 1] = arr[j];        
         }
         arr[j + 1] = tmp; /* Inserisco l'elemento corrente in posizione corretta */
-
     }
-    
 }
