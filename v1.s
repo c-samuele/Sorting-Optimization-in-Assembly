@@ -14,7 +14,7 @@ extern_loop:
 
     BEQZ  r7, end_extern   ; if i >= n, esce dal ciclo
 
-    DADDU r8, r4, r6       ; r8 = &a[i]
+    DADD r8, r4, r6       ; r8 = &a[i]
     LD    r9, 0(r8)        ; r9 = tmp = a[i]
 
     DADDI r5, r3, -1       ; r5 = j = i - 1
@@ -24,7 +24,7 @@ inner_loop:
 
     DSLL  r13, r5, 3       ; r13 = j * 8 (calcolo offset per 64-bit word)
     BNEZ r10, end_inner    ; se j < 0, esce dal ciclo
-    DADDU r14, r4, r13	   ; r14 = &a[j]
+    DADD r14, r4, r13	   ; r14 = &a[j]
 
     LD    r11, 0(r14)	   ; r11 = a[j]
     SLT   r12, r9, r11     ; r12 = (tmp < a[j]) ? 1 : 0
@@ -38,7 +38,7 @@ inner_loop:
 end_inner:
     DADDI r5, r5, 1        ; r5 = j + 1   
     DSLL  r6, r5, 3	       ; r6 = j * 8 
-    DADDU r15, r4, r6       ; r15 = &a[j+1]
+    DADD r15, r4, r6       ; r15 = &a[j+1]
     SD    r9, 0(r15)        ; r9 = a[j+1] = tmp
 
     DADDI r3, r3, 1        ; i++
